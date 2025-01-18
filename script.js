@@ -1,16 +1,30 @@
+// Remove the IntersectionObserver...
+// ...existing code...
+// Add a ScrollTrigger-based approach:
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(TextPlugin);
 
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        console.log(entry)
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        } else {
-            entry.target.classList.remove('show');
-        }
-    });
+document.querySelectorAll('.hidden').forEach((el) => {
+  gsap.to(el, {
+    scrollTrigger: {
+      trigger: el,
+      markers: true,
+      scrub: 2,
+      start: 'top 90%',
+    //   end: 'bottom 20%',
+      toggleActions: "restart pause none restart",
+      toggleClass: "show"
+    }
+  });
 });
 
 
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer.observe(el));
+gsap.to('.thank', {
+    scrollTrigger: {
+      trigger: '.thank',
+      toggleActions: "restart pause none restart",
+    },
+    duration: 3,
+    text: "Thank you for visiting our website !",
+    ease: "none",
+  });
