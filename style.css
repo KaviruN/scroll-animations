@@ -34,7 +34,7 @@ p {
     opacity: 0;
     filter: blur(10px);
     transform: translateX(-100%);
-    transition: all 1.3s;
+    transition: all 1s;
 }
 
 .show{
@@ -56,15 +56,26 @@ p {
 
 .logo {
     width: clamp(70px, 5vw + 1em, 300px);
-    transition: scale .2s ease-in-out, filter .2s;
+    /* transition: filter .2s ease-in-out; */
     cursor: pointer;
-
     
 }
 
 .logo:hover{
     scale: 1.1;
-    filter: drop-shadow(0 0 10px rgb(47, 130, 255));
+    filter: drop-shadow(0 0 20px rgb(47, 130, 255));
+
+}
+.logo:nth-child(2):hover{
+    filter: drop-shadow(0 0 20px rgb(254, 118, 7));
+
+}
+.logo:nth-child(3):hover{
+    filter: drop-shadow(0 0 20px rgb(145, 145, 145));
+
+}
+.logo:nth-child(4):hover{
+    filter: drop-shadow(0 0 20px rgb(29, 149, 255));
 
 }
 
