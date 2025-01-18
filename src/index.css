@@ -152,7 +152,7 @@ p {
   z-index: 1;
 }
 
-.sl {
+.card-shadow-hide {
   background: radial-gradient(
     600px circle at 100px 100px, 
     rgba(255, 255, 255, 0.4),
@@ -163,7 +163,7 @@ p {
   transition: opacity 2s;
 }
 
-.sm {
+.card-shadow-show {
   opacity: 1;
 }
 
