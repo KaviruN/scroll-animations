@@ -5,7 +5,7 @@ import Card from '../components/Card';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 const Home: React.FC = () => {
-    
+
     useEffect(() => {
         document.querySelectorAll('.hidden').forEach((el) => {
             gsap.to(el, {
@@ -20,6 +20,21 @@ const Home: React.FC = () => {
                 }
             });
         });
+
+        // document.querySelectorAll('.cards').forEach((el) => {
+        //     gsap.to(el, {
+        //         scrollTrigger: {
+        //             trigger: el,
+        //             markers: false,
+        //             scrub: 2,
+        //             //   start: 'top 90%',
+        //             //   end: 'bottom 20%',
+        //             toggleActions: "restart pause none restart",
+        //             toggleClass: "sm"
+        //         }
+        //     });
+        // });
+
 
         gsap.to('.thank', {
             scrollTrigger: {
@@ -38,11 +53,26 @@ const Home: React.FC = () => {
             text: "Welcome Kaviru",
             ease: "none",
         });
+
+
+
+
+        (document.querySelector(".cards") as HTMLElement).onmousemove = e => {
+            for (const card of document.getElementsByClassName("card")) {
+                const rect = card.getBoundingClientRect(),
+                    x = e.clientX - rect.left,
+                    y = e.clientY - rect.top;
+
+                (card as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
+                (card as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
+            };
+        };
     }, []);
+
+
 
     return (
         <div>
-            <h1>Home</h1>
             <section className="hidden">
                 <h1 className="welcome"></h1>
                 <p>to My web site</p>
@@ -53,13 +83,13 @@ const Home: React.FC = () => {
                     expedita officiis provident error enim inventore voluptatem cupiditate tempore quidem? Adipisci sunt neque
                     ullam suscipit!</p>
             </section>
-            <section className='cards'>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+            <section className='cards hidden'>
+                <Card title="Welcome" description="Welcome to my website!" />
+                <Card title="About" description="Learn more about what we do." />
+                <Card title="Contact" description="Get in touch with us." />
+                <Card title="Services" description="Discover our range of services." />
+                <Card title="Portfolio" description="Check out our previous work." />
+                <Card title="Testimonials" description="Read what our clients say about us." />
             </section>
             <section>
                 <h1 className="hidden">Contact</h1>
