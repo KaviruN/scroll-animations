@@ -1,0 +1,81 @@
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  height: 100svh;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  padding: 2em;
+  
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(2rem, 7vw + 1rem, 4rem);
+}
+
+p {
+  font-size: clamp(1rem, 6vw + 1rem, 1.52rem);
+  transition-delay: 200ms;
+  text-align: center;
+}
+
+.hidden{
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show{
+  opacity: 1;
+  filter: none;
+  transform: translateX(0);
+}
+
+.logo:nth-child(2){
+  transition-delay: 200ms;
+}
+.logo:nth-child(3){
+  transition-delay: 400ms;
+}
+.logo:nth-child(4){
+  transition-delay: 600ms;
+}
+
+
+.logo {
+  width: clamp(70px, 5vw + 1em, 300px);
+  /* transition: filter .2s ease-in-out; */
+  cursor: pointer;
+  
+}
+
+.logo:hover{
+  scale: 1.1;
+  filter: drop-shadow(0 0 20px rgb(47, 130, 255));
+
+}
+.logo:nth-child(2):hover{
+  filter: drop-shadow(0 0 20px rgb(254, 118, 7));
+
+}
+.logo:nth-child(3):hover{
+  filter: drop-shadow(0 0 20px rgb(145, 145, 145));
+
+}
+.logo:nth-child(4):hover{
+  filter: drop-shadow(0 0 20px rgb(29, 149, 255));
+
+}
+
