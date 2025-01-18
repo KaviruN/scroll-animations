@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document2</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #000000;
+    }
+    .logo {
+        width: 180px;
+        filter: blur(0);
+        transition: filter .5s ease;
+        cursor: pointer;
+
+
+    }
+
+    .logo:hover {
+        scale: 1.1;
+        filter: drop-shadow(0 0 20px rgb(47, 130, 255));
+
+    }
+</style>
+
+<body>
+    <div class="logos">
+        <img class="logo hidden" src="https://img.icons8.com/color/500/000000/facebook.png" alt="facebook">
+        <img class="logo hidden" src="https://img.icons8.com/color/500/000000/instagram-new.png" alt="instagram">
+        <img class="logo hidden" src="https://img.icons8.com/fluency/500/twitterx--v1.png" alt="twitter">
+        <img class="logo hidden" src="https://img.icons8.com/color/500/000000/linkedin.png" alt="linkedin">
+    </div>
+</body>
+
+</html>

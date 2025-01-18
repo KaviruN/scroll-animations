@@ -8,7 +8,7 @@ document.querySelectorAll('.hidden').forEach((el) => {
   gsap.to(el, {
     scrollTrigger: {
       trigger: el,
-      markers: true,
+      markers: false,
       scrub: 2,
       start: 'top 90%',
     //   end: 'bottom 20%',
