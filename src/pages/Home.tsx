@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger, TextPlugin } from 'gsap/all';
+import Card from '../components/Card';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
-
 const Home: React.FC = () => {
+    
     useEffect(() => {
         document.querySelectorAll('.hidden').forEach((el) => {
             gsap.to(el, {
@@ -52,6 +53,14 @@ const Home: React.FC = () => {
                     expedita officiis provident error enim inventore voluptatem cupiditate tempore quidem? Adipisci sunt neque
                     ullam suscipit!</p>
             </section>
+            <section className='cards'>
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+            </section>
             <section>
                 <h1 className="hidden">Contact</h1>
                 <p className="hidden">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi optio sunt at vero eaque! Mollitia
@@ -64,6 +73,7 @@ const Home: React.FC = () => {
                     expedita officiis provident error enim inventore voluptatem cupiditate tempore quidem? Adipisci sunt neque
                     ullam suscipit!</p>
             </section>
+
             <section className="hidden">
                 <h1 className="hidden thank"></h1>
                 <div className="logos hidden">
