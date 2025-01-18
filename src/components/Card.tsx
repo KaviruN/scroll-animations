@@ -7,16 +7,16 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 function Card(props: any) {
 
     useEffect(() => {
-        document.querySelectorAll('.card-shadow-hide').forEach((el) => {
+        document.querySelectorAll('.sl').forEach((el) => {
             gsap.to(el, {
                 scrollTrigger: {
                     trigger: el,
-                    markers: true,
+                    markers: false,
                     scrub: 2,
                     start: 'top center',
                     end: 'bottom 20%',
                     toggleActions: "restart pause none restart",
-                    toggleClass: "card-shadow-show"
+                    toggleClass: "sm"
                 },
                 duration: 2,
             });
@@ -24,8 +24,8 @@ function Card(props: any) {
     }, []);
 
     return (
-        <div className="card">
-            <div className="card-shadow-hide"></div>
+        <div className="card hidden">
+            <div className="sl"></div>
             <div className="card-content">
                 <h2>{props.title}</h2>
                 <p>{props.description}</p>
