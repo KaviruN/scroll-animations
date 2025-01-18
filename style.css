@@ -41,16 +41,45 @@ p {
 
 
 .hidden{
-    opacity: 0;
+    /* opacity: 0;
     filter: blur(10px);
-    transform: translateX(-100%);
-    transition: all 1.3s;
+    transform: translateX(-100%); */
+    animation: appear 1.3s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateX(-100%);
+        
+    }
 }
 
 .show{
-    opacity: 1;
+    /* opacity: 1;
     filter: blur(0);
-    transform: translateX(0);
+    transform: translateX(0); */
+    animation: app 1.3s ease;
+}
+
+
+@keyframes app {
+    from {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
 }
 
 .logo:nth-child(2){
@@ -68,6 +97,3 @@ p {
     width: clamp(70px, 5vw + 1em, 300px);
 }
 
-.logo:hover{
-    
-}
