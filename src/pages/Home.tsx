@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger, TextPlugin } from 'gsap/all';
 import Card from '../components/Card';
+import { WavyBackground } from '../components/Wave';
 import heroIMG from '../assets/e4c3a7bd600393b1420b0ffef056534d.svg';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
@@ -59,6 +60,7 @@ const Home: React.FC = () => {
     return (
         <div>
             <section className="hidden container">
+                <WavyBackground />
                 <div className="hero-img-container">
                     <img src={heroIMG} alt="" className='hero-img' />
                 </div>
