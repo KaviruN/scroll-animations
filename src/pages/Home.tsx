@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger, TextPlugin } from 'gsap/all';
 import Card from '../components/Card';
+import heroIMG from '../assets/e4c3a7bd600393b1420b0ffef056534d.svg';
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 const Home: React.FC = () => {
@@ -20,20 +21,6 @@ const Home: React.FC = () => {
                 }
             });
         });
-
-        // document.querySelectorAll('.cards').forEach((el) => {
-        //     gsap.to(el, {
-        //         scrollTrigger: {
-        //             trigger: el,
-        //             markers: false,
-        //             scrub: 2,
-        //             //   start: 'top 90%',
-        //             //   end: 'bottom 20%',
-        //             toggleActions: "restart pause none restart",
-        //             toggleClass: "sm"
-        //         }
-        //     });
-        // });
 
 
         gsap.to('.thank', {
@@ -57,25 +44,38 @@ const Home: React.FC = () => {
 
 
 
-        (document.querySelector(".cards") as HTMLElement).onmousemove = e => {
-            for (const card of document.getElementsByClassName("card")) {
-                const rect = card.getBoundingClientRect(),
-                    x = e.clientX - rect.left,
-                    y = e.clientY - rect.top;
+        // (document.querySelector(".cards") as HTMLElement).onmousemove = e => {
+        //     for (const card of document.getElementsByClassName("card")) {
+        //         const rect = card.getBoundingClientRect(),
+        //             x = e.clientX - rect.left,
+        //             y = e.clientY - rect.top;
 
-                (card as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
-                (card as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
-            };
-        };
+        //         (card as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
+        //         (card as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
+        //     };
+        // };
+
+
+        document.addEventListener('mousemove', (e) => {
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            // Set CSS variables for mouse position
+            document.documentElement.style.setProperty('--mouse-x', `${mouseX}px`);
+            document.documentElement.style.setProperty('--mouse-y', `${mouseY}px`);
+        });
     }, []);
 
 
 
     return (
         <div>
-            <section className="hidden">
+            <section className="hidden container">
+                <div className="hero-img-container">
+                    <img src={heroIMG} alt="" className='hero-img'/>
+                </div>
                 <h1 className="welcome"></h1>
-                <p>to My web site</p>
+                <p>to web site</p>
             </section>
             <section>
                 <h1 className="hidden">About</h1>
