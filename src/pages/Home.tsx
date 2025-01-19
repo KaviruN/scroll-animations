@@ -41,21 +41,6 @@ const Home: React.FC = () => {
             ease: "none",
         });
 
-
-
-
-        // (document.querySelector(".cards") as HTMLElement).onmousemove = e => {
-        //     for (const card of document.getElementsByClassName("card")) {
-        //         const rect = card.getBoundingClientRect(),
-        //             x = e.clientX - rect.left,
-        //             y = e.clientY - rect.top;
-
-        //         (card as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
-        //         (card as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
-        //     };
-        // };
-
-
         document.addEventListener('mousemove', (e) => {
             const mouseX = e.clientX;
             const mouseY = e.clientY;
@@ -72,7 +57,7 @@ const Home: React.FC = () => {
         <div>
             <section className="hidden container">
                 <div className="hero-img-container">
-                    <img src={heroIMG} alt="" className='hero-img'/>
+                    <img src={heroIMG} alt="" className='hero-img' />
                 </div>
                 <h1 className="welcome"></h1>
                 <p>to web site</p>
