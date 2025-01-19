@@ -35,10 +35,14 @@ const Home: React.FC = () => {
         });
 
         gsap.to('.welcome', {
+            scrollTrigger: {
+                trigger: '.welcome',
+                toggleActions: "restart pause none restart",
+            },
             duration: 3,
             start: 'center center',
             end: 'bottom 80%',
-            text: "Welcome Kaviru",
+            text: "Welcome User",
             ease: "none",
         });
 
@@ -59,7 +63,7 @@ const Home: React.FC = () => {
 
     return (
         <div>
-            <section className="hidden container">
+            <section className="container">
                 <WavyBackground />
                 <div className="hero-img-container">
                     <img src={heroIMG} alt="" className='hero-img' />
