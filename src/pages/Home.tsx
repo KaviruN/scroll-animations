@@ -41,14 +41,17 @@ const Home: React.FC = () => {
             ease: "none",
         });
 
-        document.addEventListener('mousemove', (e) => {
-            const mouseX = e.clientX;
-            const mouseY = e.clientY;
+        document.onmousemove = e => {
+            const elements = document.querySelectorAll(".card, .hero-img");
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect(),
+                    x = e.clientX - rect.left,
+                    y = e.clientY - rect.top;
+                (el as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
+                (el as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
+            });
+        };
 
-            // Set CSS variables for mouse position
-            document.documentElement.style.setProperty('--mouse-x', `${mouseX}px`);
-            document.documentElement.style.setProperty('--mouse-y', `${mouseY}px`);
-        });
     }, []);
 
 

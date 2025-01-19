@@ -234,7 +234,13 @@ h2 {
 
 .hero-img {
   width: 100%;
-  mask-image: radial-gradient(100em circle at var(--mousee-x) var(--mousee-y),
+  mask-image: radial-gradient(100em circle at var(--mouse-x) var(--mouse-y),
           rgba(255, 255, 255, 0.799),
           transparent 10%);
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.hero-img:hover {
+  opacity: .7;
 }
