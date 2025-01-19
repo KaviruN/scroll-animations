@@ -32,12 +32,33 @@ section {
 h1 {
   text-align: center;
   font-size: clamp(2rem, 7vw + 1rem, 4rem);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to bottom, #1f1f1f, #ffffffae);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  z-index: 20;
+  font-weight: bold;
+  letter-spacing: -0.01562em;
 }
 
 p {
   font-size: clamp(1rem, 6vw + 1rem, 1.52rem);
   transition-delay: 200ms;
   text-align: center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to bottom, #929292, #ffffffae);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  z-index: 20;
+  letter-spacing: -0.01562em;
 }
 
 .hidden{
@@ -189,6 +210,21 @@ p {
 h2 {
   color: rgba(255, 255, 255, 0.);
   text-align: center;
+}
+
+.welcome{
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #1f1f1f, #ffffffae);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  z-index: 20;
+  font-weight: bold;
+  letter-spacing: -0.01562em; /* Approximate tight tracking */
 }
 
 .cards p {
